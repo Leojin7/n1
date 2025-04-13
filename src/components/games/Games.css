@@ -1,0 +1,780 @@
+/* Base Styles */
+.games-container {
+  max-width: calc(100% - var(--sidebar-width));
+  margin: 2rem auto;
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+  border-radius: 30px;
+}
+
+/* Update Game Card for grid layout */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1.5rem;
+  overflow: visible;
+}
+
+.game-card {
+  width: 100%;
+  min-width: auto;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) {
+  .games-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .games-container {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    padding: 1rem;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Update the Games Grid Layout */
+.games-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Update Game Card for horizontal layout */
+.game-card {
+  min-width: 400px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin: 1rem 0;
+}
+
+/* Add smooth scrollbar styling */
+.games-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.games-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.games-grid::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.games-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Add navigation indicators */
+.games-container {
+  position: relative;
+}
+
+.scroll-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-indicator:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-left {
+  left: 1rem;
+}
+
+.scroll-right {
+  right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .game-card {
+    min-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-card {
+    min-width: 300px;
+  }
+  
+  .games-grid {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Game Card Styles */
+.game-card {
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  animation: fadeIn 0.6s ease;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.game-card:hover::before {
+  transform: translateX(100%);
+}
+
+.game-card:hover {
+  transform: translateY(-15px) rotateX(10deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Game Card Content */
+.game-icon {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  animation: floatIcon 3s ease-in-out infinite;
+  position: relative;
+}
+
+.game-icon::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 2px;
+  filter: blur(4px);
+}
+
+.game-title {
+  font-size: 1.8rem;
+  color: #f3f4f6;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.difficulty-badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.15);
+  color: #0ea5e9;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  animation: pulseBadge 2s infinite;
+}
+
+.game-description {
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill-blue { background: linear-gradient(90deg, #0ea5e9, #3b82f6); }
+.progress-fill-red { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.progress-fill-green { background: linear-gradient(90deg, #10b981, #059669); }
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Button Styles */
+.continue-game {
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.continue-game-blue {
+  background: rgba(14, 165, 233, 0.2);
+  color: #0ea5e9;
+}
+
+.continue-game-red {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.continue-game-green {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.continue-game::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.continue-game:hover::before {
+  transform: translateX(100%);
+}
+
+.continue-game:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+/* Active Game Container */
+.active-game-container {
+  position: relative;
+}
+
+.back-to-games {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-to-games:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Game Card Enhancements */
+.game-card {
+  transform: perspective(1000px) rotateX(0) rotateY(0);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform-origin: center center;
+}
+
+.game-card:hover {
+  transform: perspective(1000px) translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Fix for nested pseudo-elements */
+.game-card::before,
+.game-card::after {
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Fix Progress Bar Animation */
+.progress-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.progress-fill::after {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* Enhanced Button Interactions */
+.continue-game {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.continue-game:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.continue-game:active {
+  transform: translateY(0);
+}
+
+/* Fix Badge Animation */
+.difficulty-badge {
+  isolation: isolate;
+  position: relative;
+  background: rgba(14, 165, 233, 0.15);
+}
+
+.difficulty-badge::before {
+  z-index: -1;
+  animation: badgeShine 2s linear infinite;
+}
+
+/* Optimized Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes badgeShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Performance Optimizations */
+.games-grid {
+  transform-style: flat;
+  backface-visibility: hidden;
+}
+
+/* Mobile Performance Fixes */
+@media (max-width: 768px) {
+  .game-card,
+  .continue-game {
+    transform: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Neon Glow Effects */
+.game-card::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    #3b82f6,
+    #8b5cf6,
+    #ec4899,
+    #3b82f6
+  );
+  border-radius: 32px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover::after {
+  opacity: 0.5;
+  animation: borderGlow 3s linear infinite;
+}
+
+/* Enhanced Progress Bar */
+.progress-bar {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) inset;
+}
+
+.progress-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: progressShimmer 2s infinite;
+}
+
+/* Game Icon Enhancement */
+.game-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.game-icon::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.2),
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover .game-icon::before {
+  opacity: 1;
+  animation: pulseGlow 2s infinite;
+}
+
+/* New Animations */
+@keyframes borderGlow {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+}
+
+@keyframes progressShimmer {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Interactive Button States */
+.continue-game {
+  background: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.continue-game:hover {
+  transform: translateY(-4px) translateZ(10px);
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 
+    0 10px 20px rgba(59, 130, 246, 0.2),
+    0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.continue-game:active {
+  transform: translateY(-2px) translateZ(5px);
+}
+
+/* Difficulty Badge Enhancement */
+.difficulty-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.difficulty-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: badgeShine 3s infinite;
+}
+
+@keyframes badgeShine {
+  0% {
+    transform: rotate(45deg) translateY(-100%);
+  }
+  100% {
+    transform: rotate(45deg) translateY(100%);
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .game-card {
+    transform: none !important;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-8px) !important;
+  }
+}
+
+@keyframes titlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulseBadge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .games-container {
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+  
+  .games-title {
+    font-size: 2.5rem;
+  }
+  
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .game-card {
+    padding: 2rem;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+  }
+}
+
+/* Glass Morphism Fallback */
+@supports (backdrop-filter: blur(20px)) {
+  .game-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Add these new styles for enhanced game cards */
+.game-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.game-card:hover .game-icon-wrapper {
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.game-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Color variants */
+.game-blue { border-color: rgba(59, 130, 246, 0.3); }
+.game-purple { border-color: rgba(139, 92, 246, 0.3); }
+.game-green { border-color: rgba(16, 185, 129, 0.3); }
+
+.progress-blue { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.progress-purple { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+.progress-green { background: linear-gradient(90deg, #10b981, #34d399); }
+
+/* Enhanced difficulty badges */
+.difficulty-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.difficulty-badge.easy {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.difficulty-badge.medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.difficulty-badge.hard {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Game progress enhancements */
+.game-progress {
+  margin: 1.5rem 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Active game container */
+.active-game-container {
+  position: relative;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 24px;
+  padding: 2rem;
+  min-height: 500px;
+}

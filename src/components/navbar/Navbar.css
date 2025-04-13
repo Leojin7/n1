@@ -1,0 +1,21 @@
+.profile-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(78, 161, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.profile-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(157, 78, 255, 0.6);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}

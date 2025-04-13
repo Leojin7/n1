@@ -1,0 +1,178 @@
+.smart-notes-container {
+  padding: 2rem;
+  color: #fff;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.notes-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-toggle:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.mode-toggle.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.notes-editor {
+  margin-bottom: 2rem;
+}
+
+.notes-input {
+  width: 100%;
+  min-height: 400px;
+  padding: 1.5rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.notes-input.code-mode {
+  font-family: 'Fira Code', monospace;
+  background: #1a1e2d;
+}
+
+.notes-summary {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.formatting-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  position: sticky;
+  bottom: 0;
+}
+
+.formatting-toolbar button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formatting-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Add these new styles */
+.notes-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.note-title-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 1.2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.save-note-btn {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-note-btn:hover {
+  background: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.save-note-btn:disabled {
+  background: rgba(139, 92, 246, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.saved-notes {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.saved-note-item {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saved-note-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.saved-note-item h4 {
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.saved-note-item p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: #64748b;
+}

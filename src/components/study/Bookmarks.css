@@ -1,0 +1,145 @@
+.bookmarks-container {
+  padding: 2rem;
+  color: var(--text-primary);
+}
+
+.bookmarks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.bookmarks-header h2 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  width: 300px;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: white;
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.bookmarks-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+.collections-sidebar {
+  background: rgba(13, 18, 30, 0.95);
+  padding: 1.5rem;
+  border-radius: 16px;
+  height: fit-content;
+}
+
+.new-collection-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.collection-item {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: left;
+  margin: 0.3rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.collection-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.collection-item.active {
+  background: rgba(99, 102, 241, 0.2);
+  color: #6366F1;
+}
+
+.bookmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.bookmark-card {
+  background: rgba(13, 18, 30, 0.95);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bookmark-card h3 {
+  margin-bottom: 1rem;
+  color: #6366F1;
+}
+
+.bookmark-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.3rem 0.8rem;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #6366F1;
+}
+
+.add-bookmark-section {
+  background: rgba(13, 18, 30, 0.95);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.add-bookmark-section input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}

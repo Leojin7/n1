@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg: #1a1f2e;
+  --secondary-bg: rgba(28, 33, 40, 0.9);
+  --primary-text: #ffffff;
+  --secondary-text: #8b949e;
+  --accent-color: #0d6efd;
+  --max-width: 1600px;
+  --sidebar-width: 250px;
+  --content-padding: 2rem;
+  --font-sans: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-heading: 'Space Grotesk', var(--font-sans);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+code, pre, .code-block, .code-editor, textarea.code-textarea {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.feature-title, .section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.mono-text {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: #0f1520;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  width: calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  padding: var(--content-padding);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.section-container {
+  width: 100%;
+  max-width: calc(var(--max-width) - var(--sidebar-width) - (var(--content-padding) * 2));
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.content-wrapper {
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  :root {
+    --max-width: 1200px;
+    --content-padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 70px;
+    --content-padding: 1rem;
+  }
+
+  .main-content,
+  .content-wrapper,
+  .section-container {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0b5ed7;
+}
