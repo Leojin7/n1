@@ -1,3 +1,110 @@
+.coding-arena-preview {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.coding-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.streak-counter {
+  background: rgba(255, 69, 0, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.challenge-selection {
+  margin: 1.5rem 0;
+}
+
+.challenge-dropdown {
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+}
+
+.challenge-details {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.challenge-description {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.test-cases-preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.test-case-item {
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.code-textarea {
+  width: 100%;
+  min-height: 300px;
+  background: #1a1b26;
+  color: #a9b1d6;
+  padding: 1rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.test-results {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.test-result-item {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.test-result-item.passed {
+  border-left: 4px solid #10B981;
+}
+
+.test-result-item.failed {
+  border-left: 4px solid #EF4444;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.test-details {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 .nextgen-container {
   background-color: #121a29;
   color: white;
@@ -8,7 +115,7 @@
   min-height: 80vh;
 }
 
-/* Add white dots background pattern */
+
 .nextgen-container::before {
   content: '';
   position: absolute;
@@ -328,443 +435,2195 @@
   100% { opacity: 1; transform: scale(1); }
 }
 
-.feature-preview {
-  position: relative;
-  padding: 2rem;
-}
-
-.preview-title {
-  flex: 1;
-}
-
-.preview-title h2 {
-  font-size: 2.5rem;
-  color: var(--feature-color);
-  margin-bottom: 0.5rem;
-}
-
-.launch-date {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background: linear-gradient(90deg, var(--feature-color), transparent);
-  border-radius: 2rem;
-  font-size: 1.1rem;
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.feature-details {
+/* Feature Preview Styles */
+.feature-preview-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
-.feature-item {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
+/* Code Assistant Styles */
+.code-assistant {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.code-sample {
+  background: #1a1b26;
+  color: #a9b1d6;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-5px);
-}
-
-.feature-item-icon {
-  font-size: 1.5rem;
-  color: var(--feature-color);
-  margin-bottom: 1rem;
-}
-
-.feature-item h3 {
-  font-size: 1.2rem;
-  color: white;
-  margin-bottom: 0.5rem;
-}
-
-.feature-item p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-}
-
-.development-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 2rem;
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace;
   font-size: 0.9rem;
-  color: var(--feature-color);
-  margin-top: 2rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  margin: 0;
 }
 
-.development-status::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--feature-color);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-
-/* Remove these classes as they're no longer needed */
-.waitlist-button,
-.waitlist-button:hover,
-.notify-button,
-.notify-button:hover,
-.button-group {
-  display: none;
-}
-
-.waitlist-button {
-  background: linear-gradient(45deg, var(--feature-color), transparent);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  width: 100%;
-  max-width: 300px;
-  margin: 2rem auto 0;
-  display: block;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.waitlist-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(var(--feature-color-rgb), 0.3);
-}
-
-.notify-button {
-  background: linear-gradient(45deg, var(--feature-color), transparent);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  width: 100%;
-  max-width: 300px;
-  margin: 1rem auto 0;
-  display: block;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.notify-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(var(--feature-color-rgb), 0.3);
-  opacity: 1;
-}
-
-.button-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-/* Update existing feature tabs for the horizontal scroll */
-  .feature-tabs {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    overflow-x: auto;
-    margin: 2rem 0;
-    scrollbar-width: none;
-  }
-  
-  .feature-tabs::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .feature-tab {
-    padding: 0.75rem 1.5rem;
-    border-radius: 2rem;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-  }
-  
-  .feature-tab.active {
-    transform: scale(1.05);
-  }
-}
-
-.showcase-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.showcase-icon {
-  font-size: 2rem;
-}
-
-.showcase-title h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.showcase-release {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-.showcase-grid {
+.ai-features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.showcase-card {
-  background-color: rgba(30, 40, 60, 0.7);
-  border-radius: 0.75rem;
+.ai-feature-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
-.showcase-card:hover {
+.ai-feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.showcase-feature-icon {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.showcase-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
-}
-
-.showcase-card p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.showcase-status {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.8rem;
-  background-color: rgba(33, 150, 243, 0.2);
-  color: #2196f3;
-}
-
-/* Coding Arena Styles */
-.coding-arena {
-  background-color: #2d1b69;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.coding-arena::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, #ff8f6b 0%, transparent 70%);
-  opacity: 0.3;
-  border-radius: 50%;
-  filter: blur(40px);
-}
-
-.arena-title {
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.arena-container {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 2rem;
-}
-
-.question-panel, .code-implementation {
-  background-color: rgba(20, 12, 46, 0.7);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
-}
-
-.panel-title {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.question-panel .panel-title {
-  color: #ff6b6b;
-}
-
-.code-implementation .panel-title {
-  color: #4dabf7;
-}
-
-.question-content h3 {
+.ai-feature-icon {
   font-size: 2rem;
-  line-height: 1.4;
-  color: white;
-  margin: 0.5rem 0;
-}
-
-.code-editor {
-  background-color: #1a1b26;
-  border-radius: 0.5rem;
-  padding: 1rem;
   margin-bottom: 1rem;
-}
-
-.code-textarea {
-  width: 100%;
-  min-height: 200px;
-  background: transparent;
-  border: none;
-  color: #4dabf7;
-  font-family: 'Fira Code', monospace;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  resize: none;
-  outline: none;
-}
-
-.run-button {
-  background-color: #4dabf7;
-  color: white;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-left: auto;
   display: block;
 }
 
-.result-panel {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.result-panel.success {
-  background-color: rgba(104, 219, 124, 0.1);
-  color: #69db7c;
-}
-
-.result-panel.error {
-  background-color: rgba(255, 107, 107, 0.1);
-  color: #ff6b6b;
-}
-.launch-countdown {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
-  justify-content: center;
-}
-
-.countdown-item {
+/* Digital Twin Styles */
+.simulation-placeholder {
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.countdown-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--feature-color);
-  text-shadow: 0 0 20px rgba(var(--feature-color-rgb), 0.3);
-}
-
-.countdown-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.launch-notify-btn {
-  background: linear-gradient(45deg, var(--feature-color), transparent);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.simulation-icon {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.simulation-controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sim-control-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.btn-icon {
-  font-size: 1.2rem;
+.sim-control-btn:hover {
+  background: var(--feature-color);
 }
 
-.launch-stats {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 2rem;
+.twin-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.stat-item {
+.twin-feature-item {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* VR Experience Styles */
+.vr-placeholder {
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-.stat-value {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--feature-color);
+.vr-icon {
+  font-size: 3rem;
+  opacity: 0.7;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+.vr-device-selector {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+.vr-device-dropdown {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.vr-connect-btn {
   background: var(--feature-color);
-  display: inline-block;
-  margin-right: 0.5rem;
-  animation: pulse 2s infinite;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.immersive-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.immersive-feature {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Quantum Computing Styles */
+.quantum-placeholder {
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.quantum-icon {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.quantum-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.quantum-gate-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quantum-gate-btn:hover {
+  background: var(--feature-color);
+}
+
+.quantum-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+/* Add these styles */
+.success-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(16, 185, 129, 0.2);
+  border: 2px solid #10B981;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: success-pulse 1s ease-out;
+  pointer-events: none;
+}
+
+@keyframes success-pulse {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+.test-result-item {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.test-result-item.passed {
+  border-left: 4px solid #10B981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.test-result-item.failed {
+  border-left: 4px solid #EF4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+.quantum-feature {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Marketplace Styles */
+.marketplace-placeholder {
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.store-icon {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.marketplace-search {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.marketplace-search-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.marketplace-search-btn {
+  background: var(--feature-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.marketplace-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.marketplace-feature {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* LMS Integration Styles */
+.lms-placeholder {
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.lms-icon {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.lms-platforms {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.lms-platform-logo {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.lms-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.lms-feature {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .ai-features-grid,
+  .twin-features,
+  .immersive-features,
+  .quantum-features,
+  .marketplace-features,
+  .lms-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-features-grid,
+  .twin-features,
+  .immersive-features,
+  .quantum-features,
+  .marketplace-features,
+  .lms-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+.ai-features-grid,
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.twin-features,
+.immersive-features,
+.quantum-features,
+.marketplace-features,
+.lms-features {
+  grid-template-columns: 1fr;
+}
+
+
+
