@@ -17,9 +17,7 @@ Designed for the modern learner, NeuroLearn combines education, gamification, an
 - 💻 **Coding Arena** for real-time problem solving
 - 📚 Cognitive-friendly interface using memory & attention-based techniques
 
----
 
-## 🖼️ Sneak Peek
 
 ### 🔹 Dashboard
 ![Dashboard](./path/to/DASHBOARD1.png) 
