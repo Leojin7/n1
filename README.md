@@ -53,7 +53,6 @@ cd NeuroLearn
 # Install dependencies
 npm install
 
-# Run the development server
 npm run dev
 👨‍🎓 Built For Students, By a Student
 Crafted with ❤️ by Dev Ruhela (Leojin18) – Aiming to build smarter, more focused learners through tech.
